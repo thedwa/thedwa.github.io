@@ -95,19 +95,17 @@ canvas{
 }
 
 /* ---- content styling ---- */
-/* ---- content styling ---- */
 #content {
   background-color: #ffffff; /* White background */
   border-radius: 8px; /* Rounded corners */
-  padding: 20px; /* Padding around text */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Shadow for a "card" effect */
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%; /* Adjust width as needed */
   max-width: 400px; /* Maximum width */
+  padding: 40px 80px; /* Shorthand for setting top/bottom padding to 40px and left/right padding to 80px */
 }
 
 #content h1 {
@@ -121,4 +119,20 @@ canvas{
   margin-top: 0.5em;
   font-size: 1.5em;
   color: #333; /* Adjust text color if needed */
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  #content {
+    max-width: 90%; /* Allow the card to be wider on smaller screens */
+    padding: 20px; /* Reduce padding on smaller screens */
+  }
+
+  #content h1 {
+    font-size: 2em; /* Adjust font size for mobile */
+  }
+
+  #content #slogan {
+    font-size: 1em; /* Adjust font size for mobile */
+  }
 }
