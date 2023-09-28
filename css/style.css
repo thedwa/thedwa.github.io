@@ -87,7 +87,7 @@ canvas{
 #particles-js{
   width: 100%;
   height: 100%;
-  background-color: #f9f8f0;
+  background-color: #000000;
   background-image: url('');
   background-size: cover;
   background-position: 50% 50%;
@@ -95,10 +95,19 @@ canvas{
 }
 
 /* ---- content styling ---- */
+/* ---- content styling ---- */
 #content {
+  background-color: #ffffff; /* White background */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding around text */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Shadow for a "card" effect */
   text-align: center;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
+  width: 80%; /* Adjust width as needed */
+  max-width: 400px; /* Maximum width */
 }
 
 #content h1 {
