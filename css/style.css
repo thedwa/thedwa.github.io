@@ -123,6 +123,13 @@ canvas{
   color: #333; /* Adjust text color if needed */
 }
 
+.button_coming_soon{
+  padding: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 8px;
+}
+
 /* Mobile view */
 @media (max-width: 768px) {
   #content {
