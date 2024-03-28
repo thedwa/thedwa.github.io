@@ -1,0 +1,32 @@
+/* File: css/portfolio.css */
+
+#portfolio {
+    width: 80%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .profile-photo {
+    width: 150px;
+    height: auto;
+    border-radius: 75px;
+    display: block;
+    margin: 20px auto;
+  }
+  
+  h1, h2 {
+    color: #007bff;
+  }
+  
+  p, li {
+    color: #333;
+  }
+  
+  a {
+    color: #007bff;
+  }
+  
+  ul {
+    list-style-position: inside;
+  }
+  
