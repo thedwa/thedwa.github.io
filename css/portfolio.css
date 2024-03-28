@@ -26,31 +26,47 @@ body {
 .intro-text p {
   font-size: 28px; /* Adjusted for balance */
   margin: 0; /* Removes default margin */
-  flex-basis: 60%; /* Adjust this value as needed */
+  flex-basis: 70%; /* Increased text area */
 }
 
 .profile-photo {
-  width: 40%; /* Adjust this value as needed */
+  width: 30%; /* Decreased to allocate more space to the text */
   height: auto;
   border: none; /* Removes any border */
   margin: 0;
   object-fit: cover;
 }
 
-.education-section h2, .education-section ul {
-  margin-left: 20px;
-}
-
 .cv-entry, .education-section {
   display: flex;
-  justify-content: space-between;
 }
 
-.cv-company, .cv-details {
-  width: 48%; /* Adjusts width to fit side by side */
+.cv-company {
+  flex-basis: 15%; /* Significantly reduces the width of the logo column */
+  display: flex;
+  justify-content: center; /* Centers the logo */
+  align-items: center; /* Aligns the logo vertically */
+}
+
+.cv-details {
+  flex-basis: 85%; /* Increases the width for details */
 }
 
 .company-logo {
-  max-width: 50px;
+  max-width: 50px; /* Adjusts the logo size */
   height: auto;
+}
+
+.education-section h2, .education-section ul, .education-section p {
+  margin-left: 20px;
+}
+
+/* Additional adjustments for education section list styles */
+.education-section ul {
+  list-style-type: disc;
+  padding-left: 20px; /* Adds padding to align bullets properly */
+}
+
+.education-section p {
+  font-weight: bold;
 }
