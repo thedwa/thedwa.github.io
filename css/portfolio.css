@@ -6,16 +6,9 @@ body {
 }
 
 #portfolio {
-    background-color: #ffffff; /* White background for content */
-    padding: 20px;
+  background-color: #ffffff; /* White background for content */
+  padding: 20px;
 }
-
-.intro-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #e0e0e0; /* Light grey background for intro */
-  }
 
 .intro-text, .cv-section, .education-section {
   background-color: #ffffff; /* Sets white background for sections */
@@ -31,38 +24,27 @@ body {
 }
 
 .intro-text p {
-    font-size: 28px;
-    margin: 0;
-  }
+  font-size: 28px; /* Adjusted for balance */
+  margin: 0; /* Removes default margin */
+  flex-basis: 60%; /* Adjust this value as needed */
+}
 
-  .profile-photo {
-    width: 300px; /* Adjust based on your preference */
-    height: 300px;
-    object-fit: cover;
-    border-radius: 0; /* Make square */
-  }
+.profile-photo {
+  width: 40%; /* Adjust this value as needed */
+  height: auto;
+  border: none; /* Removes any border */
+  margin: 0;
+  object-fit: cover;
+}
 
-  h2 {
-    color: #000;
-    margin-top: 20px;
-  }
-  
-  .education-section p, .education-section ul {
-    margin: 0;
-  }
-  
-  .education-section p {
-    font-weight: bold;
-  }
-  
-  .education-section ul {
-    list-style-type: disc;
-    margin-left: 20px;
-  }
-  
-  .cv-entry, .education-section {
-    margin-bottom: 20px;
-  }
+.education-section h2, .education-section ul {
+  margin-left: 20px;
+}
+
+.cv-entry, .education-section {
+  display: flex;
+  justify-content: space-between;
+}
 
 .cv-company, .cv-details {
   width: 48%; /* Adjusts width to fit side by side */
