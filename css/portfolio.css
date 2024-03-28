@@ -7,9 +7,8 @@ body {
   }
   
   .intro-text p {
-    font-size: 28px; /* Adjust size as needed */
+    font-size: 48px;
     text-align: center;
-    font-style: italic;
   }
   
   .profile-photo {
@@ -42,7 +41,7 @@ body {
   }
   
   .company-logo {
-    width: 100px; /* Adjust based on actual logo sizes */
+    width: 40px; /* Adjust based on actual logo sizes */
     height: auto;
     margin: 0 auto; /* Center logo */
   }
