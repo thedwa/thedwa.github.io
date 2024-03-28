@@ -21,10 +21,11 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #e0e0e0; /* Light grey background for this section */
+  text-align: center;
 }
 
 .intro-text p {
-  font-size: 28px; /* Adjusted for balance */
+  font-size: 48px; /* Adjusted for balance */
   margin: 0; /* Removes default margin */
   flex-basis: 70%; /* Increased text area */
 }
