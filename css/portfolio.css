@@ -42,7 +42,7 @@ body {
   display: flex;
 }
 
-.cv-company {
+.cv-institution {
   flex-basis: 15%; /* Significantly reduces the width of the logo column */
   display: flex;
   justify-content: center; /* Centers the logo */
