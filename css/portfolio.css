@@ -1,50 +1,51 @@
-/* File: css/portfolio.css */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap');
 
 body {
-    background-color: #ffffff;
-    font-family: 'Garamond', serif;
-    color: #000000;
-  }
-  
-  .intro-text p {
-    font-size: 48px;
-    text-align: center;
-  }
-  
-  .profile-photo {
-    display: block;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    margin: 20px auto;
-    object-fit: cover;
-  }
-  
-  .cv-section {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .cv-entry {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .cv-company {
-    flex-basis: 20%;
-    text-align: center;
-  }
-  
-  .cv-details {
-    flex-basis: 80%;
-  }
-  
-  .company-logo {
-    width: 40px; /* Adjust based on actual logo sizes */
-    height: auto;
-    margin: 0 auto; /* Center logo */
-  }
-  
-  /* Additional styling */
-  
+  font-family: 'EB Garamond', serif;
+  background-color: #f5f5f5; /* Sets a light grey background for the entire body */
+}
+
+.intro-text, .cv-section, .education-section {
+  background-color: #ffffff; /* Sets white background for sections */
+  padding: 20px; /* Adds some padding around the content */
+  margin-bottom: 20px; /* Adds margin below each section */
+}
+
+.intro-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e0e0e0; /* Light grey background for this section */
+}
+
+.intro-text p {
+  font-size: 28px; /* Adjusted for balance */
+  margin: 0; /* Removes default margin */
+  flex-basis: 60%; /* Adjust this value as needed */
+}
+
+.profile-photo {
+  width: 40%; /* Adjust this value as needed */
+  height: auto;
+  border: none; /* Removes any border */
+  margin: 0;
+  object-fit: cover;
+}
+
+.education-section h2, .education-section ul {
+  margin-left: 20px;
+}
+
+.cv-entry, .education-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cv-company, .cv-details {
+  width: 48%; /* Adjusts width to fit side by side */
+}
+
+.company-logo {
+  max-width: 50px;
+  height: auto;
+}
