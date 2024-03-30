@@ -38,7 +38,7 @@ body {
   object-fit: cover;
 }
 
-.cv-entry, .education-section {
+.cv-entry, .education-entry {
   display: flex;
 }
 
