@@ -4,18 +4,9 @@
   <meta charset="UTF-8">
   <title>Theodore Wanner | Portfolio</title>
   <link rel="stylesheet" href="css/portfolio.css">
+  <script defer src="js/layout.js"></script> <!-- Include the layout script -->
 </head>
 <body>
-  <header class="px-4 lg:px-6 h-14 flex items-center">
-    <a class="flex items-center justify-center" href="#">
-      <span class="sr-only">Theodore Wanner</span>
-    </a>
-    <nav class="ml-auto flex gap-4 sm:gap-6">
-      <a class="text-sm font-medium hover:underline underline-offset-4" href="#about">About</a>
-      <a class="text-sm font-medium hover:underline underline-offset-4" href="#experience">Experience</a>
-      <a class="text-sm font-medium hover:underline underline-offset-4" href="#education">Education</a>
-    </nav>
-  </header>
   <main class="flex-1">
     <section class="w-full py-12 md:py-24 lg:py-32" id="about">
       <div class="container px-4 md:px-6">
@@ -50,6 +41,7 @@
           </div>
         </div>
         <div class="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:grid-cols-3 md:gap-12 lg:max-w-6xl">
+          <!-- Founder, Foodwise -->
           <div class="grid gap-4">
             <div class="flex items-center gap-4">
               <div class="p-3 rounded-full">
@@ -58,10 +50,59 @@
               <h3 class="text-xl font-bold">Founder, Foodwise</h3>
             </div>
             <p class="text-gray-500 dark:text-gray-400 mt-2">
-              Founder of Foodwise, a foodtech platform leveraging AI for personalized meal planning...
+              Founder of Foodwise, a foodtech platform leveraging AI for personalized meal planning. Developed the proprietary algorithm and comprehensive kitchen app suite. 
+              <a href="https://foodwise.me" target="_blank">View Software Architecture</a>.
+              Media coverage: <a href="https://www.aargauerzeitung.ch/aargau/baden/baden-theodore-wanner-spannt-fuer-das-start-up-foodwise-mit-dem-restaurant-spedition-zusammen-ld.2605950?reduced=true" target="_blank">Aargauer Zeitung</a>
             </p>
           </div>
-          <!-- Additional experience entries... -->
+          <!-- Product Manager, Valora Digital AG -->
+          <div class="grid gap-4">
+            <div class="flex items-center gap-4">
+              <div class="p-3 rounded-full">
+                <img src="img/valora.png" alt="Valora Digital AG" class="company-logo">
+              </div>
+              <h3 class="text-xl font-bold">Product Manager, Valora Digital AG</h3>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 mt-2">
+              Managed core technical infrastructure, introduced a data market with APIs, developed a quick-commerce system, and significantly reduced technical error and refund rates.
+            </p>
+          </div>
+          <!-- Global Credit Analyst, Google Inc. -->
+          <div class="grid gap-4">
+            <div class="flex items-center gap-4">
+              <div class="p-3 rounded-full">
+                <img src="img/google.png" alt="Google Inc." class="company-logo">
+              </div>
+              <h3 class="text-xl font-bold">Global Credit Analyst, Google Inc.</h3>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 mt-2">
+              Negotiated with C-Level executives to mitigate credit exposure, leading to significant reductions in write-offs and new risk-free revenue.
+            </p>
+          </div>
+          <!-- External Consultant, Kraft Heinz -->
+          <div class="grid gap-4">
+            <div class="flex items-center gap-4">
+              <div class="p-3 rounded-full">
+                <img src="img/kraft-heinz.png" alt="Kraft Heinz" class="company-logo">
+              </div>
+              <h3 class="text-xl font-bold">External Consultant, Kraft Heinz</h3>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 mt-2">
+              Field researcher evaluating financial contracts and making improvement suggestions in Indonesia.
+            </p>
+          </div>
+          <!-- Sales & Marketing Intern, SIX Swiss Exchange -->
+          <div class="grid gap-4">
+            <div class="flex items-center gap-4">
+              <div class="p-3 rounded-full">
+                <img src="img/six.png" alt="SIX Swiss Exchange" class="company-logo">
+              </div>
+              <h3 class="text-xl font-bold">Sales & Marketing Intern, SIX Swiss Exchange</h3>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 mt-2">
+              Intern at Scoach, represented at product fairs, and checked derivative white-papers.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -81,10 +122,31 @@
               <h3 class="text-xl font-bold">MSc. Business Administration</h3>
             </div>
             <p class="text-gray-500 dark:text-gray-400 mt-2">
-              University of Groningen (2016 - 2018)
+              University of Groningen (2016 - 2018). GPA: 5.9/6, top 1% & highest grade in my cohort. Thesis: Do Angel Investors Prefer Dominant Entrepreneurs? (Grade: 10/10)
             </p>
           </div>
-          <!-- Additional education entries... -->
+          <div class="grid gap-4">
+            <div class="flex items-center gap-4">
+              <div class="p-3 rounded-full">
+                <img src="img/university-logo.png" alt="University Logo" class="company-logo">
+              </div>
+              <h3 class="text-xl font-bold">MSc. Finance</h3>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 mt-2">
+              University of Groningen (2015 - 2017). GPA: 5.3/6. Thesis: The interaction between cognitive and non-cognitive factors for individual financial decision-making (Grade: 8/10)
+            </p>
+          </div>
+          <div class="grid gap-4">
+            <div class="flex items-center gap-4">
+              <div class="p-3 rounded-full">
+                <img src="img/university-logo.png" alt="University Logo" class="company-logo">
+              </div>
+              <h3 class="text-xl font-bold">BSc. Business Administration</h3>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 mt-2">
+              FHNW Fachhochschule Nordwestschweiz (2012 - 2015). GPA: 5.1/6. Programming of a trading algorithm in C++ executing buying and selling signals autonomously.
+            </p>
+          </div>
         </div>
       </div>
     </section>
