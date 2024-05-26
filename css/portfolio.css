@@ -1,154 +1,88 @@
-/* portfolio.css */
-:root {
-  --font-libre_franklin: 'Libre Franklin', sans-serif;
-  --font-caudex: 'Caudex', serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap');
 
 body {
-  font-family: var(--font-libre_franklin);
-  background-color: #f5f5f5;
-  display: flex;
-  flex-direction: column;
+  font-family: 'EB Garamond', serif;
+  background-color: #f5f5f5; /* Sets a light grey background for the entire body */
 }
 
-header {
-  background-color: #ffffff;
+#portfolio {
+  background-color: #ffffff; /* White background for content */
   padding: 20px;
-  border-bottom: 1px solid #e0e0e0;
 }
 
-nav a {
-  color: #333;
-  text-decoration: none;
+.intro-text, .cv-section, .education-section {
+  background-color: #ffffff; /* Sets white background for sections */
+  padding: 20px; /* Adds some padding around the content */
+  margin-bottom: 20px; /* Adds margin below each section */
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
-main {
-  flex: 1;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.grid {
-  display: grid;
-}
-
-.gap-4 {
-  gap: 1rem;
-}
-
-.md\:grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.md\:gap-10 {
-  gap: 2.5rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-}
-
-.font-bold {
-  font-weight: 700;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-}
-
-.tracking-tighter {
-  letter-spacing: -0.05em;
-}
-
-.text-gray-500 {
-  color: #6b7280;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.max-w-\[600px\] {
-  max-width: 600px;
-}
-
-.rounded-full {
-  border-radius: 9999px;
-}
-
-.bg-gray-100 {
-  background-color: #f3f4f6;
-}
-
-.dark\:bg-gray-800 {
-  background-color: #1f2937;
-}
-
-.text-center {
+.intro-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e0e0e0; /* Light grey background for this section */
   text-align: center;
 }
 
-.space-y-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+.intro-text p {
+  font-size: 48px; /* Adjusted for balance */
+  margin: 0; /* Removes default margin */
+  flex-basis: 70%; /* Increased text area */
 }
 
-.sm\:grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.profile-photo {
+  width: 30%; /* Decreased to allocate more space to the text */
+  height: auto;
+  border: none; /* Removes any border */
+  margin: 0;
+  object-fit: cover;
 }
 
-.md\:grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.cv-entry {
+  display: flex;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
+.education-entry {
+    margin-bottom: 20px; /* Ensures space between education entries */
+  }
+
+.cv-institution {
+  flex-basis: 15%; /* Significantly reduces the width of the logo column */
+  display: flex;
+  justify-content: center; /* Centers the logo */
+  align-items: center; /* Aligns the logo vertically */
 }
 
-.max-w-5xl {
-  max-width: 64rem;
+.cv-details {
+  flex-basis: 85%; /* Increases the width for details */
 }
 
-.p-3 {
-  padding: 0.75rem;
+.company-logo {
+  max-width: 50px; /* Adjusts the logo size */
+  height: auto;
 }
 
-.rounded-full {
-  border-radius: 9999px;
+.education-section h2, .education-section ul, .education-section p {
+  margin-left: 20px;
 }
 
-.text-xl {
-  font-size: 1.25rem;
+.education-entry h3 {
+    margin-bottom: 0.5em; /* Reduces space between the title and the bullet points to tighten the visual grouping */
+    color: #333; /* Optional: Sets the color of the education titles for emphasis */
+  }
+  
+  .education-section ul {
+    list-style-type: disc;
+    padding-left: 20px; /* Proper indentation of bullet points */
+    margin-top: 0; /* Reduces space between the title and the first bullet point */
+    padding-bottom: 0.5em; /* Adds a little padding below the list for spacing before the next title */
+  }
+  
+  .education-section li {
+    margin-bottom: 10px; /* Adjusts spacing between list items for readability */
+  }
+
+.education-section p {
+  font-weight: bold;
 }
 
-.md\:py-24 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
-.lg\:py-32 {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-}
-
-.w-full {
-  width: 100%;
-}
-
-h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-}
