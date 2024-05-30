@@ -44,23 +44,12 @@ body {
   margin-top: 0;
 }
 
-.profile-photo-placeholder {
+.profile-photo {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background-color: #e0e0e0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  object-fit: cover;
   margin-top: 20px;
-}
-
-.profile-photo-placeholder::before {
-  content: "\f007";
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  font-size: 50px;
-  color: #fff;
 }
 
 .cv-entry {
