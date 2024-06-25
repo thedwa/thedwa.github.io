@@ -51,25 +51,38 @@
         </section>
 
         <section id="experience" class="experience-section">
-            <h2>Professional Experience</h2>
-            <div class="experience-timeline">
-                <div class="experience-item">
-                    <div class="experience-content">
-                        <h3>Founder</h3>
-                        <p class="company">Foodwise</p>
-                        <p class="date">2023 - present</p>
-                        <ul class="achievements">
-                            <li>Developed an AI-powered foodtech platform for restaurants (B2B) to deliver personalized meals at scale, enhancing user health.</li>
-                            <li>Enhanced reliability of a GenAI chat solution by developing a genetic recommendation algorithm for deterministic optimization.</li>
-                            <li>Built a 10,000+ line software suite (JS, HTML, CSS) with API support, streamlining operations for diverse B2B stakeholders.</li>
-                            <li>Managed diverse stakeholder relationships by effectively engaging and collaborating with partners to foster a proactive, solution-oriented environment.</li>
-                        </ul>
-                        <p>Media coverage: 
-                            <a href="https://www.aargauerzeitung.ch/aargau/baden/baden-theodore-wanner-spannt-fuer-das-start-up-foodwise-mit-dem-restaurant-spedition-zusammen-ld.2605950?reduced=true" target="_blank">Aargauer Zeitung</a>, 
-                            <a href="img/rundschau.jpeg" target="_blank">Rundschau</a>
-                        </p>
-                        <a href="https://foodwise.me" class="company-link" target="_blank">Learn more about Foodwise</a>
-                    </div>
+          <h2>Professional Experience</h2>
+          <div class="experience-timeline">
+              <div class="experience-item">
+                  <div class="experience-header">
+                      <h3>Founder</h3>
+                      <p class="company">Foodwise</p>
+                      <p class="date">2023 - present</p>
+                  </div>
+                  <div class="experience-details">
+                      <div class="experience-tabs">
+                          <button class="tab-button active" data-tab="overview">Overview</button>
+                          <button class="tab-button" data-tab="tech">Tech Achievements</button>
+                          <button class="tab-button" data-tab="business">Business Impact</button>
+                      </div>
+                      <div class="tab-content active" id="overview">
+                          <p>Developed an AI-powered foodtech platform for restaurants (B2B) to deliver personalized meals at scale, enhancing user health.</p>
+                      </div>
+                      <div class="tab-content" id="tech">
+                          <ul>
+                              <li>Enhanced reliability of a GenAI chat solution by developing a genetic recommendation algorithm for deterministic optimization.</li>
+                              <li>Built a 10,000+ line software suite (JS, HTML, CSS) with API support, streamlining operations for diverse B2B stakeholders.</li>
+                          </ul>
+                      </div>
+                      <div class="tab-content" id="business">
+                          <ul>
+                              <li>Managed diverse stakeholder relationships by effectively engaging and collaborating with partners to foster a proactive, solution-oriented environment.</li>
+                              <li>Media coverage: <a href="https://www.aargauerzeitung.ch/aargau/baden/baden-theodore-wanner-spannt-fuer-das-start-up-foodwise-mit-dem-restaurant-spedition-zusammen-ld.2605950?reduced=true" target="_blank">Aargauer Zeitung</a>, <a href="img/rundschau.jpeg" target="_blank">Rundschau</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <a href="https://foodwise.me" class="company-link" target="_blank">Learn more about Foodwise</a>
+              </div>
                 </div>
 
                 <div class="experience-item">
@@ -202,5 +215,7 @@
     <footer>
         <p>&copy; 2024 Théodore Wanner. All rights reserved.</p>
     </footer>
+
+    <script src="portfolio2.js"></script>
 </body>
 </html>
