@@ -352,3 +352,42 @@ footer {
       left: 0%;
   }
 }
+
+/* ... (previous CSS content) ... */
+
+/* Certifications Section */
+.certifications-section {
+  padding: 100px 0;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.certification-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.certification-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.certification-card p {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+/* ... (rest of the CSS content) ... */
