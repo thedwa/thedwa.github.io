@@ -1,72 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Theodore Wanner | Portfolio</title>
-  <link rel="stylesheet" href="css/portfolio.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Théodore Wanner | Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
 </head>
 <body>
-  <div id="portfolio">
-    <header class="hero">
-      <div class="hero-text">
-        <h1>Théodore Wanner</h1>
-        <h2>Product Innovator & Technologist</h2>
-        <p>Driving innovation with a blend of business acumen and technological expertise.</p>
-      </div>
-      <div class="hero-image">
-        <img src="img/theodore.jpeg" alt="Theodore Wanner" class="profile-photo">
-      </div>
-    </header>
+    <nav>
+        <div class="logo">Théodore Wanner</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <section class="keywords-section">
-      <h2>Keywords</h2>
-      <div class="keywords">
-        <span>Product Innovation</span>
-        <span>Technology</span>
-        <span>AI</span>
-        <span>E-Commerce</span>
-        <span>Data Analysis</span>
-        <span>Cross-functional Leadership</span>
-        <span>Startup</span>
-        <span>Foodtech</span>
-        <span>Business Strategy</span>
-        <span>Quick-Commerce</span>
-        <span>Credit Analysis</span>
-        <span>Customer Satisfaction</span>
-        <span>Military Service</span>
-        <span>Top of Class</span>
-        <span>Best Thesis</span>
-        <span>Public Speaking Award</span>
-        <span>Leadership Program</span>
-        <span>Faculty Council</span>
-        <span>Trading Algorithm</span>
-        <span>Advanced Analytics</span>
-      </div>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="glitch" data-text="We Build">We Build</h1>
+                <h2 class="glitch" data-text="Innovative Solutions">Innovative Solutions</h2>
+                <p>Driving innovation with a blend of business acumen and technological expertise.</p>
+            </div>
+            <div class="hero-image">
+                <img src="img/theodore.jpeg" alt="Théodore Wanner" class="profile-photo">
+            </div>
+        </section>
 
-    <h2>Professional Experience</h2>
-    <div class="cv-section">
-      <!-- Add your professional experience here as shown in the previous response -->
-    </div>
+        <section id="keywords" class="keywords-section">
+            <h2>Expertise</h2>
+            <div class="keywords">
+                <span>Product Innovation</span>
+                <span>Technology</span>
+                <span>AI</span>
+                <span>E-Commerce</span>
+                <span>Data Analysis</span>
+                <span>Cross-functional Leadership</span>
+                <span>Startup</span>
+                <span>Foodtech</span>
+                <span>Business Strategy</span>
+                <span>Quick-Commerce</span>
+            </div>
+        </section>
 
-    <h2>Education</h2>
-    <div class="education-section">
-      <!-- Add your education details here as shown in the previous response -->
-    </div>
+        <section id="experience" class="experience-section">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <!-- Add your professional experience here -->
+                <div class="timeline-item">
+                    <h3>Product Manager</h3>
+                    <p>Company Name | 2020 - Present</p>
+                    <ul>
+                        <li>Led cross-functional teams in developing innovative products</li>
+                        <li>Implemented data-driven strategies resulting in 30% revenue growth</li>
+                    </ul>
+                </div>
+                <!-- Add more experience items as needed -->
+            </div>
+        </section>
 
-    <footer class="contact-section">
-      <h2>Contact</h2>
-      <form action="mailto:wanner.theodore@gmail.com" method="post" enctype="text/plain">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email">
-        <label for="message">Message:</label>
-        <textarea id="message" name="message"></textarea>
-        <input type="submit" value="Send">
-      </form>
+        <section id="education" class="education-section">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <!-- Add your education details here -->
+                <div class="education-item">
+                    <h3>Master's in Business Administration</h3>
+                    <p>University Name | 2018 - 2020</p>
+                    <p>Honors: Top of Class, Best Thesis</p>
+                </div>
+                <!-- Add more education items as needed -->
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Contact</h2>
+            <form action="mailto:wanner.theodore@gmail.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Théodore Wanner. All rights reserved.</p>
     </footer>
-  </div>
 </body>
 </html>
