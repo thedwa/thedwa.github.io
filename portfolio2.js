@@ -112,3 +112,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+// technical background:
+document.addEventListener('DOMContentLoaded', function() {
+    const skillItems = document.querySelectorAll('.skill-item');
+
+    skillItems.forEach(item => {
+        const header = item.querySelector('.skill-header');
+        const expandBtn = item.querySelector('.expand-btn');
+
+        header.addEventListener('click', () => {
+            item.classList.toggle('expanded');
+            expandBtn.textContent = item.classList.contains('expanded') ? '−' : '+';
+        });
+    });
+});
