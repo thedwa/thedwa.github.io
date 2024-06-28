@@ -264,6 +264,7 @@ footer {
 }
 
 @keyframes blink {
+  0%, 100% { opacity: 1; }
   50% { border-color: transparent }
 }
 
@@ -276,7 +277,9 @@ footer {
 #typed-tags {
   font-size: 1.5rem;
   font-weight: normal;
+  position: relative;
   overflow: hidden;
+  display: inline-block;
   white-space: nowrap;
   border-right: 0.15em solid #000;
   margin: 0 auto;
@@ -284,6 +287,14 @@ footer {
   animation: 
     typing 3.5s steps(40, end),
     blink 0.75s step-end infinite;
+}
+
+#typed-tags::after {
+  content: '|';
+  position: absolute;
+  right: -8px;
+  top: 0;
+  animation: blink 0.7s infinite;
 }
 
 .hero p {

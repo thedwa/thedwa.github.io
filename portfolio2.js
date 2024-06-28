@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
       "FOUNDER FOODWISE",
       "BUSINESS & TECHNOLOGY PRODUCT MANAGER",
       "EX-GOOGLE",
-      "CREDIT RISK EXPERT"
+      "CREDIT RISK"
     ];
     const typedTags = document.getElementById('typed-tags');
     let currentTagIndex = 0;
   
     function typeTag(tag, index = 0) {
       if (index < tag.length) {
-        typedTags.textContent += tag.charAt(index);
+        typedTags.textContent = tag.substring(0, index + 1);
         setTimeout(() => typeTag(tag, index + 1), 50);
       } else {
         setTimeout(eraseTag, 2000);
@@ -20,8 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   
     function eraseTag() {
-      if (typedTags.textContent.length > 0) {
-        typedTags.textContent = typedTags.textContent.slice(0, -1);
+      const currentText = typedTags.textContent;
+      if (currentText.length > 0) {
+        typedTags.textContent = currentText.substring(0, currentText.length - 1);
         setTimeout(eraseTag, 30);
       } else {
         currentTagIndex = (currentTagIndex + 1) % tags.length;
