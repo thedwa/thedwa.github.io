@@ -63,7 +63,7 @@ nav ul li a:hover {
 }
 
 .hero {
-  height: 750vh;
+  height: 75vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -885,6 +885,7 @@ footer {
 
 
 /* CHAT FEATURE */
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 .chat-container {
   position: fixed;
@@ -894,7 +895,7 @@ footer {
 }
 
 .chat-toggle {
-  background-color: #007bff;
+  background-color: #35007a;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -905,7 +906,7 @@ footer {
 }
 
 .chat-toggle:hover {
-  background-color: #0056b3;
+  background-color: #35007a;
 }
 
 .chat-window {
@@ -922,7 +923,7 @@ footer {
 }
 
 .chat-header {
-  background-color: #007bff;
+  background-color: #35007a;
   color: white;
   padding: 10px;
   border-top-left-radius: 10px;
@@ -954,7 +955,7 @@ footer {
 }
 
 .user-message {
-  background-color: #007bff;
+  background-color: #35007a;
   color: white;
   align-self: flex-end;
   margin-left: auto;
@@ -980,7 +981,7 @@ footer {
 }
 
 .chat-input button {
-  background-color: #007bff;
+  background-color: #35007a;
   color: white;
   border: none;
   padding: 5px 10px;
