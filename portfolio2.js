@@ -132,84 +132,124 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // CHAT FEATURE AND FUNCTIONS START
+
+// CHAT FEATURE AND FUNCTIONS START
 document.addEventListener('DOMContentLoaded', function() {
-    const chatToggle = document.getElementById('chat-toggle');
-    const chatWindow = document.getElementById('chat-window');
-    const chatClose = document.getElementById('chat-close');
-    const chatMessages = document.getElementById('chat-messages');
-    const chatInput = document.getElementById('chat-input');
-    const chatSend = document.getElementById('chat-send');
-  
-    // Ensure this line is present to get the typing indicator element
+    console.log("DOM fully loaded and parsed");
+
+    function getElement(id) {
+        const element = document.getElementById(id);
+        if (!element) {
+            console.error(`Element with id '${id}' not found`);
+        }
+        return element;
+    }
+
+    const chatToggle = getElement('chat-toggle');
+    const chatWindow = getElement('chat-window');
+    const chatClose = getElement('chat-close');
+    const chatMessages = getElement('chat-messages');
+    const chatInput = getElement('chat-input');
+    const chatSend = getElement('chat-send');
+
+    if (!chatMessages) {
+        console.error("Chat messages container not found. Chat functionality will not work.");
+        return;
+    }
+
+    // Create typing indicator
     const typingIndicator = document.createElement('div');
     typingIndicator.className = 'typing-indicator';
     typingIndicator.innerHTML = '<span></span><span></span><span></span>';
     chatMessages.appendChild(typingIndicator);
-  
-    chatToggle.addEventListener('click', () => {
-      chatWindow.classList.toggle('hidden');
-    });
-  
-    chatClose.addEventListener('click', () => {
-      chatWindow.classList.add('hidden');
-    });
-  
-    chatSend.addEventListener('click', sendMessage);
-    chatInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') sendMessage();
-    });
-  
+
+    if (chatToggle && chatWindow) {
+        chatToggle.addEventListener('click', () => {
+            chatWindow.classList.toggle('hidden');
+        });
+    }
+
+    if (chatClose && chatWindow) {
+        chatClose.addEventListener('click', () => {
+            chatWindow.classList.add('hidden');
+        });
+    }
+
+    if (chatSend) {
+        chatSend.addEventListener('click', sendMessage);
+    }
+
+    if (chatInput) {
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    }
+
     async function sendMessage() {
-      const message = chatInput.value.trim();
-      if (message === '') return;
-  
-      addMessage(message, 'user');
-      chatInput.value = '';
-  
-      // Show typing indicator
-      typingIndicator.style.display = 'flex';
-      scrollToBottom();
-  
-      try {
-        const response = await query({ question: message });
-        // Hide typing indicator
-        typingIndicator.style.display = 'none';
-        addMessage(response.text, 'bot');
-      } catch (error) {
-        console.error('Error sending message:', error);
-        // Hide typing indicator
-        typingIndicator.style.display = 'none';
-        addMessage('Sorry, I encountered an error.', 'bot');
-      }
-    }
-  
-    function addMessage(text, sender) {
-      const messageElement = document.createElement('div');
-      messageElement.classList.add('chat-message', `${sender}-message`);
-      messageElement.textContent = text;
-      chatMessages.insertBefore(messageElement, typingIndicator);
-      scrollToBottom();
-    }
-  
-    function scrollToBottom() {
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-  
-    async function query(data) {
-      // Simulate network delay for demo purposes
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      const response = await fetch(
-        "http://localhost:3000/api/v1/prediction/74e19091-5c72-4230-b521-d8965f5d5e3e",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data)
+        if (!chatInput || !typingIndicator) {
+            console.error("Required elements for sending messages are missing");
+            return;
         }
-      );
-      const result = await response.json();
-      return result;
+
+        const message = chatInput.value.trim();
+        if (message === '') return;
+
+        addMessage(message, 'user');
+        chatInput.value = '';
+
+        // Show typing indicator
+        typingIndicator.style.display = 'flex';
+        scrollToBottom();
+
+        try {
+            const response = await query({ question: message });
+            // Hide typing indicator
+            typingIndicator.style.display = 'none';
+            addMessage(response.text, 'bot');
+        } catch (error) {
+            console.error('Error sending message:', error);
+            // Hide typing indicator
+            typingIndicator.style.display = 'none';
+            addMessage('Sorry, I encountered an error.', 'bot');
+        }
     }
-  });
+
+    function addMessage(text, sender) {
+        if (!chatMessages || !typingIndicator) {
+            console.error("Required elements for adding messages are missing");
+            return;
+        }
+
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('chat-message', `${sender}-message`);
+        messageElement.textContent = text;
+        chatMessages.insertBefore(messageElement, typingIndicator);
+        scrollToBottom();
+    }
+
+    function scrollToBottom() {
+        if (chatMessages) {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    }
+
+    async function query(data) {
+        // Simulate network delay for demo purposes
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        const response = await fetch(
+            "http://localhost:3000/api/v1/prediction/74e19091-5c72-4230-b521-d8965f5d5e3e",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            }
+        );
+        const result = await response.json();
+        return result;
+    }
+
+    console.log("Chat functionality initialized");
+});
