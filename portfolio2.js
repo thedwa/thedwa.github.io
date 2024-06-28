@@ -132,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // CHAT FEATURE AND FUNCTIONS START
-
 document.addEventListener('DOMContentLoaded', function() {
     const chatToggle = document.getElementById('chat-toggle');
     const chatWindow = document.getElementById('chat-window');
@@ -140,8 +139,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const chatMessages = document.getElementById('chat-messages');
     const chatInput = document.getElementById('chat-input');
     const chatSend = document.getElementById('chat-send');
-
-    const typingIndicator = document.getElementById('typing-indicator');
+  
+    // Ensure this line is present to get the typing indicator element
+    const typingIndicator = document.createElement('div');
+    typingIndicator.className = 'typing-indicator';
+    typingIndicator.innerHTML = '<span></span><span></span><span></span>';
+    chatMessages.appendChild(typingIndicator);
   
     chatToggle.addEventListener('click', () => {
       chatWindow.classList.toggle('hidden');
@@ -157,51 +160,56 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
     async function sendMessage() {
-        const message = chatInput.value.trim();
-        if (message === '') return;
-    
-        addMessage(message, 'user');
-        chatInput.value = '';
-    
-        // Show typing indicator
-        typingIndicator.classList.remove('hidden');
-    
-        try {
-          const response = await query({ question: message });
-          // Hide typing indicator
-          typingIndicator.classList.add('hidden');
-          addMessage(response.text, 'bot');
-        } catch (error) {
-          console.error('Error sending message:', error);
-          // Hide typing indicator
-          typingIndicator.classList.add('hidden');
-          addMessage('Sorry, I encountered an error.', 'bot');
+      const message = chatInput.value.trim();
+      if (message === '') return;
+  
+      addMessage(message, 'user');
+      chatInput.value = '';
+  
+      // Show typing indicator
+      typingIndicator.style.display = 'flex';
+      scrollToBottom();
+  
+      try {
+        const response = await query({ question: message });
+        // Hide typing indicator
+        typingIndicator.style.display = 'none';
+        addMessage(response.text, 'bot');
+      } catch (error) {
+        console.error('Error sending message:', error);
+        // Hide typing indicator
+        typingIndicator.style.display = 'none';
+        addMessage('Sorry, I encountered an error.', 'bot');
+      }
+    }
+  
+    function addMessage(text, sender) {
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('chat-message', `${sender}-message`);
+      messageElement.textContent = text;
+      chatMessages.insertBefore(messageElement, typingIndicator);
+      scrollToBottom();
+    }
+  
+    function scrollToBottom() {
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  
+    async function query(data) {
+      // Simulate network delay for demo purposes
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      const response = await fetch(
+        "http://localhost:3000/api/v1/prediction/74e19091-5c72-4230-b521-d8965f5d5e3e",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
         }
-      }
-  
-      function addMessage(text, sender) {
-        const messageElement = document.createElement('div');
-        messageElement.classList.add('chat-message', `${sender}-message`);
-        messageElement.textContent = text;
-        chatMessages.appendChild(messageElement);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      }
-  
-      async function query(data) {
-        // Simulate network delay for demo purposes
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
-        const response = await fetch(
-          "http://localhost:3000/api/v1/prediction/74e19091-5c72-4230-b521-d8965f5d5e3e",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-          }
-        );
-        const result = await response.json();
-        return result;
-      }
-    });
+      );
+      const result = await response.json();
+      return result;
+    }
+  });

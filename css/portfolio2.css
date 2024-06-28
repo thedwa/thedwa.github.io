@@ -988,12 +988,12 @@ footer {
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  width: 120px; /* Adjust the width as needed */
+  width: 100px; /* Adjust the width as needed */
 }
 
 /* Typing indicator styles */
 .typing-indicator {
-  display: flex;
+  display: none;
   justify-content: flex-start;
   align-items: center;
   padding: 10px;
