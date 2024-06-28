@@ -514,11 +514,6 @@ footer {
 .company-link:hover {
   text-decoration: underline;
 }
-.tab-button.active,
-.tab-button:hover {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-}
 
 .tab-content {
   display: none;
