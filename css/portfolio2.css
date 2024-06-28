@@ -1,10 +1,11 @@
 :root {
-  --primary-color: #ffffff; /* Changed to white */
-  --secondary-color: #000000; /* Changed to black */
-  --accent-color: #f0f0f0; /* Light grey, kept as is */
-  --text-color: #333333; /* Dark grey for text */
-  --background-color: #f8f8f8; /* Light grey for background */
+  --primary-color: #ffffff;
+  --secondary-color: #000000;
+  --accent-color: #f0f0f0;
+  --text-color: #333333;
+  --background-color: #f8f8f8;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -381,7 +382,7 @@ footer {
 
 .experience-section {
   padding: 100px 0;
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
   color: var(--text-color);
 }
 
@@ -469,7 +470,7 @@ footer {
   padding: 8px 16px;
   margin-right: 8px;
   margin-bottom: 8px;
-  border-radius: 20px;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: bold;
@@ -479,10 +480,11 @@ footer {
 
 .tab-button.active,
 .tab-button:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
+  background-color: #f0f0f0;
+  border-color: #cccccc;
+  color: #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .tab-content {
   margin-top: 15px;
 }
