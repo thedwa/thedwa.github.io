@@ -1,21 +1,22 @@
 :root {
-  --primary-color: #000;
-  --secondary-color: #fff;
-  --accent-color: #f0f0f0;
-  --text-color: #333;
+  --primary-color: #ffffff; /* Changed to white */
+  --secondary-color: #000000; /* Changed to black */
+  --accent-color: #f0f0f0; /* Light grey, kept as is */
+  --text-color: #333333; /* Dark grey for text */
+  --background-color: #f8f8f8; /* Light grey for background */
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
 body {
   font-family: 'Lato', sans-serif;
   line-height: 1.6;
   color: var(--text-color);
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
 }
 
 .container {
@@ -116,8 +117,8 @@ nav ul li a:hover {
 }
 
 .keywords span {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
   padding: 10px 20px;
   border-radius: 25px;
   font-size: 0.9rem;
@@ -378,10 +379,10 @@ footer {
   margin-bottom: 10px;
 }
 
-.certification-card p {
-  color: #000;
-  font-size: 0.9rem;
-  margin-bottom: 5px;
+.experience-section {
+  padding: 100px 0;
+  background-color: var(--primary-color);
+  color: var(--text-color);
 }
 
 /* ... (rest of the CSS content) ... */
@@ -403,9 +404,8 @@ footer {
   border-radius: 8px;
   margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* This ensures the border-radius applies to child elements */
+  overflow: hidden;
 }
-
 
 .experience-item:hover {
   transform: translateY(-5px);
@@ -413,20 +413,21 @@ footer {
 }
 
 .experience-logo {
-  flex: 0 0 100px; /* Adjust this value to change the width of the logo section */
+  flex: 0 0 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f8f8f8; /* Light background for the logo section */
+  background-color: var(--accent-color);
   padding: 20px;
 }
 
 .experience-logo img {
-  width: 80px; /* Adjust size as needed */
+  width: 80px;
   height: 80px;
-  object-fit: cover;
+  object-fit: contain; /* Changed from cover to contain */
   border-radius: 50%;
   border: 2px solid #e0e0e0;
+  background-color: #fff; /* Added white background */
 }
 
 .experience-content {
@@ -435,19 +436,20 @@ footer {
 }
 
 .experience-header h3 {
+  color: var(--secondary-color);
   font-size: 1.2rem;
   margin: 0 0 5px 0;
 }
 
 .experience-header .company {
+  color: var(--text-color);
   font-size: 1rem;
-  color: #4a4a4a;
   margin-bottom: 5px;
 }
 
 .experience-header .date {
-  font-size: 0.9rem;
   color: #777;
+  font-size: 0.9rem;
   margin-bottom: 10px;
 }
 
@@ -461,7 +463,8 @@ footer {
 }
 
 .tab-button {
-  background-color: #f0f0f0;
+  background-color: var(--accent-color);
+  color: var(--text-color);
   border: none;
   padding: 8px 12px;
   margin-right: 5px;
@@ -471,10 +474,10 @@ footer {
   font-size: 0.9rem;
 }
 
-
-.tab-button.active {
-  background-color: #007bff;
-  color: white;
+.tab-button.active,
+.tab-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .tab-content {
@@ -872,4 +875,6 @@ footer {
 .technical-background-section h2 {
     text-align: center;
     margin-bottom: 40px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
 }
