@@ -128,3 +128,68 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
+// CHAT FEATURE AND FUNCTIONS START
+
+document.addEventListener('DOMContentLoaded', function() {
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatWindow = document.getElementById('chat-window');
+    const chatClose = document.getElementById('chat-close');
+    const chatMessages = document.getElementById('chat-messages');
+    const chatInput = document.getElementById('chat-input');
+    const chatSend = document.getElementById('chat-send');
+  
+    chatToggle.addEventListener('click', () => {
+      chatWindow.classList.toggle('hidden');
+    });
+  
+    chatClose.addEventListener('click', () => {
+      chatWindow.classList.add('hidden');
+    });
+  
+    chatSend.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendMessage();
+    });
+  
+    async function sendMessage() {
+      const message = chatInput.value.trim();
+      if (message === '') return;
+  
+      addMessage(message, 'user');
+      chatInput.value = '';
+  
+      try {
+        const response = await query({ question: message });
+        addMessage(response.text, 'bot');
+      } catch (error) {
+        console.error('Error sending message:', error);
+        addMessage('Sorry, I encountered an error.', 'bot');
+      }
+    }
+  
+    function addMessage(text, sender) {
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('chat-message', `${sender}-message`);
+      messageElement.textContent = text;
+      chatMessages.appendChild(messageElement);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  
+    async function query(data) {
+      const response = await fetch(
+        "http://localhost:3000/api/v1/prediction/74e19091-5c72-4230-b521-d8965f5d5e3e",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        }
+      );
+      const result = await response.json();
+      return result;
+    }
+  });
