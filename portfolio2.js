@@ -1,3 +1,23 @@
+
+// ADDING THE TEXT ANIMATION OF THE HEADER
+
+document.addEventListener('DOMContentLoaded', function() {
+    const text = "Founder Foodwise | Business & Technology Product Manager | ex-Google | Credit Risk";
+    const typingText = document.querySelector('.typing-text');
+    
+    function typeText(text, i = 0) {
+      if (i < text.length) {
+        typingText.textContent += text.charAt(i);
+        setTimeout(() => typeText(text, i + 1), 50);
+      }
+    }
+  
+    setTimeout(() => typeText(text), 1000);
+  });
+
+
+// EXPERIENCE ITEMS
+
 document.addEventListener('DOMContentLoaded', function() {
     const experienceItems = document.querySelectorAll('.experience-item');
 
@@ -253,3 +273,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log("Chat functionality initialized");
 });
+
