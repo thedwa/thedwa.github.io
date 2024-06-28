@@ -480,7 +480,7 @@ footer {
 
 .tab-button.active,
 .tab-button:hover {
-  background-color: #f0f0f0;
+  background-color: #cccccc;
   border-color: #cccccc;
   color: #000000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
