@@ -1,20 +1,36 @@
 
 // ADDING THE TEXT ANIMATION OF THE HEADER
-
 document.addEventListener('DOMContentLoaded', function() {
-    const text = "Founder Foodwise | Business & Technology Product Manager | ex-Google | Credit Risk";
-    const typingText = document.querySelector('.typing-text');
-    
-    function typeText(text, i = 0) {
-      if (i < text.length) {
-        typingText.textContent += text.charAt(i);
-        setTimeout(() => typeText(text, i + 1), 50);
+    const tags = [
+      "FOUNDER FOODWISE",
+      "BUSINESS & TECHNOLOGY PRODUCT MANAGER",
+      "EX-GOOGLE",
+      "CREDIT RISK EXPERT"
+    ];
+    const typedTags = document.getElementById('typed-tags');
+    let currentTagIndex = 0;
+  
+    function typeTag(tag, index = 0) {
+      if (index < tag.length) {
+        typedTags.textContent += tag.charAt(index);
+        setTimeout(() => typeTag(tag, index + 1), 50);
+      } else {
+        setTimeout(eraseTag, 2000);
       }
     }
   
-    setTimeout(() => typeText(text), 1000);
+    function eraseTag() {
+      if (typedTags.textContent.length > 0) {
+        typedTags.textContent = typedTags.textContent.slice(0, -1);
+        setTimeout(eraseTag, 30);
+      } else {
+        currentTagIndex = (currentTagIndex + 1) % tags.length;
+        setTimeout(() => typeTag(tags[currentTagIndex]), 500);
+      }
+    }
+  
+    typeTag(tags[currentTagIndex]);
   });
-
 
 // EXPERIENCE ITEMS
 
