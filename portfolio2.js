@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "FOUNDER FOODWISE",
       "BUSINESS & TECHNOLOGY PRODUCT MANAGER",
       "EX-GOOGLE",
+      "SELF-TAUGHT SOFTWARE ENGINEER",
       "CREDIT RISK"
     ];
     const typedTags = document.getElementById('typed-tags');

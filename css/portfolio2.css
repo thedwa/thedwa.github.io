@@ -169,7 +169,7 @@ nav ul li a:hover {
   z-index: 1;
   top: 15px;
 }
-
+/*
 .timeline-item:nth-child(odd)::after {
   right: -10px;
 }
@@ -177,7 +177,7 @@ nav ul li a:hover {
 .timeline-item:nth-child(even)::after {
   left: -10px;
 }
-
+*/
 .education-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
