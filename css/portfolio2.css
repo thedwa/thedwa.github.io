@@ -375,7 +375,7 @@ footer {
 }
 
 .certification-card h3 {
-  color: #000;
+  color: var(--secondary-color); /* Ensuring proper contrast */
   font-size: 1.2rem;
   margin-bottom: 10px;
 }
@@ -387,12 +387,6 @@ footer {
 }
 
 /* ... (rest of the CSS content) ... */
-
-.experience-section {
-  padding: 100px 0;
-  background-color: #1a1a1a;
-  color: #ffffff;
-}
 
 .experience-timeline {
   max-width: 1000px;
@@ -648,6 +642,10 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--primary-color); /* Changed to primary color (white) */
+  color: var(--text-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .degree-card-back {
@@ -666,11 +664,17 @@ footer {
 }
 
 .certification-card {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color); /* Changed to primary color (white) */
   border-radius: 10px;
   padding: 30px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card p {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  margin-bottom: 5px;
 }
 
 .certification-card:hover {
@@ -875,6 +879,5 @@ footer {
 .technical-background-section h2 {
     text-align: center;
     margin-bottom: 40px;
-    background-color: var(--accent-color);
     color: var(--text-color);
 }
