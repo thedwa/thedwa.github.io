@@ -573,10 +573,6 @@ footer {
   margin-left: -3px;
 }
 
-.education-section h2 {
-  color: var(--secondary-color);
-}
-
 .timeline-item {
   padding: 10px 40px;
   position: relative;
@@ -873,6 +869,7 @@ footer {
   }
 }
 
+.keywords-section h2,
 .experience-section h2,
 .education-section h2,
 .certifications-section h2,
@@ -880,4 +877,8 @@ footer {
     text-align: center;
     margin-bottom: 40px;
     color: var(--text-color);
+}
+
+.education-section h2 {
+  color: var(--secondary-color);
 }
