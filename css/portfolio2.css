@@ -91,8 +91,8 @@ nav ul li a:hover {
 }
 
 .hero-image {
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
   border-radius: 50%;
   overflow: hidden;
   border: 5px solid var(--secondary-color);
@@ -422,8 +422,8 @@ footer {
 }
 
 .experience-logo img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: contain; /* Changed from cover to contain */
   border-radius: 50%;
   border: 2px solid #e0e0e0;
@@ -463,21 +463,26 @@ footer {
 }
 
 .tab-button {
-  background-color: var(--accent-color);
-  color: var(--text-color);
-  border: none;
-  padding: 8px 12px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  border-radius: 4px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #e0e0e0;
+  padding: 8px 16px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tab-button.active,
 .tab-button:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
+  background-color: #f0f0f0;
+  border-color: #cccccc;
+  color: #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .tab-content {
