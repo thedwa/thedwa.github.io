@@ -218,9 +218,11 @@ button {
   transition: background-color 0.3s ease;
 }
 
+/*
 button:hover {
   background-color: var(--text-color);
 }
+*/
 
 footer {
   background-color: var(--primary-color);

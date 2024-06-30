@@ -167,6 +167,40 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// when expanding one section, collapse the other section: 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const skillItems = document.querySelectorAll('.skill-item');
+    let currentlyExpanded = null;
+
+    skillItems.forEach(item => {
+        const header = item.querySelector('.skill-header');
+        const expandBtn = item.querySelector('.expand-btn');
+        const details = item.querySelector('.skill-details');
+
+        header.addEventListener('click', () => {
+            if (currentlyExpanded && currentlyExpanded !== item) {
+                // Collapse the previously expanded item
+                currentlyExpanded.classList.remove('expanded');
+                currentlyExpanded.querySelector('.expand-btn').textContent = '+';
+                currentlyExpanded.querySelector('.skill-details').style.maxHeight = null;
+            }
+
+            // Toggle the clicked item
+            item.classList.toggle('expanded');
+            
+            if (item.classList.contains('expanded')) {
+                expandBtn.textContent = '−';
+                details.style.maxHeight = details.scrollHeight + "px";
+                currentlyExpanded = item;
+            } else {
+                expandBtn.textContent = '+';
+                details.style.maxHeight = null;
+                currentlyExpanded = null;
+            }
+        });
+    });
+});
 
 
 // CHAT FEATURE AND FUNCTIONS START
