@@ -123,7 +123,7 @@ canvas{
   color: #333; /* Adjust text color if needed */
 }
 
-.button_view_profile{
+#button_view_profile{
   background-color: #ffffff;
   color: #000000;
   border: 1px solid #e0e0e0;
