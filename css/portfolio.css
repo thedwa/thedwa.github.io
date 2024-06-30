@@ -549,7 +549,7 @@ footer {
 }
 
 .company-link:hover {
-  color: #ffffff;
+  color: #000000;
 }
 
 @keyframes fadeIn {
