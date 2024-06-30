@@ -792,6 +792,7 @@ footer {
   }
 }
 
+/* technical background */
 .technical-background-section {
   padding: 100px 0;
   background-color: var(--primary-color);
@@ -816,6 +817,8 @@ footer {
   margin-bottom: 20px;
   display: flex;
   align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent-color);
 }
 
 .skill-category h3 i {
@@ -823,10 +826,17 @@ footer {
 }
 
 .skill-item {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   margin-bottom: 15px;
   overflow: hidden;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.skill-item:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 .skill-header {
@@ -858,7 +868,8 @@ footer {
   padding: 0 15px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-out;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
 }
 
 .skill-details p {
@@ -867,6 +878,7 @@ footer {
 
 .skill-item.expanded .skill-details {
   max-height: 200px; /* Adjust as needed */
+  opacity: 1;
 }
 
 .skill-item.expanded .expand-btn {
@@ -875,7 +887,7 @@ footer {
 
 @media (max-width: 768px) {
   .skill-category {
-      width: 100%;
+    width: 100%;
   }
 }
 
