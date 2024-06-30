@@ -169,15 +169,7 @@ nav ul li a:hover {
   z-index: 1;
   top: 15px;
 }
-/*
-.timeline-item:nth-child(odd)::after {
-  right: -10px;
-}
 
-.timeline-item:nth-child(even)::after {
-  left: -10px;
-}
-*/
 .education-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -575,12 +567,12 @@ footer {
 .education-timeline::after {
   content: '';
   position: absolute;
-  width: 6px;
+  width: 3px;
   background-color: var(--accent-color);
   top: 0;
   bottom: 0;
   left: 50%;
-  margin-left: -3px;
+  margin-left: -1.5px;
 }
 
 .timeline-item {
