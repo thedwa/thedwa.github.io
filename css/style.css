@@ -123,11 +123,18 @@ canvas{
   color: #333; /* Adjust text color if needed */
 }
 
-.button_coming_soon{
-  padding: 10px;
-  padding-right: 15px;
-  padding-left: 15px;
-  border-radius: 8px;
+.button_view_profile{
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #e0e0e0;
+  padding: 8px 16px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 /* Mobile view */
