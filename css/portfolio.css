@@ -130,63 +130,88 @@ nav ul li a:hover {
   transform: scale(1.05);
 }
 
-.experience-section, .education-section {
+/* Updated Education Section */
+/* ... (previous CSS remains unchanged) ... */
+
+/* Updated Education Section */
+.education-section {
   padding: 100px 0;
-}
-
-.timeline {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 2px;
-  background-color: var(--accent-color);
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -1px;
-}
-
-.timeline-item {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-}
-
-.timeline-item::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: var(--secondary-color);
-  border: 4px solid var(--accent-color);
-  border-radius: 50%;
-  z-index: 1;
-  top: 15px;
+  background-color: var(--background-color);
 }
 
 .education-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.education-item {
-  background-color: var(--accent-color);
+.education-card {
+  perspective: 1000px;
+  height: 300px;
+}
+
+.education-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.education-card:hover .education-card-inner {
+  transform: rotateY(180deg);
+}
+
+.education-card-front, .education-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  border-radius: 5px;
-  transition: transform 0.3s ease;
 }
 
-.education-item:hover {
-  transform: translateY(-5px);
+.education-card-back {
+  background-color: var(--accent-color);
+  transform: rotateY(180deg);
+  overflow-y: auto;
 }
 
+.education-card-front h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+.education-card-front p {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.education-card-back p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Responsive design for education cards */
+@media (max-width: 768px) {
+  .education-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* end education section - contact and other */
 .contact-section {
   padding: 100px 0;
   background-color: var(--accent-color);
