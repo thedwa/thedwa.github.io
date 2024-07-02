@@ -445,6 +445,8 @@ footer {
   padding: 100px 0;
   background-color: var(--primary-color);
   color: var(--secondary-color);
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .certifications-grid {
