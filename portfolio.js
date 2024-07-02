@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error sending message:', error);
             // Hide typing indicator
             typingIndicator.style.display = 'none';
-            addMessage('Sorry, I encountered an error.', 'bot');
+            addMessage('Coming soon - just awaiting deployment :)', 'bot');
         }
     }
 
