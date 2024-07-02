@@ -350,8 +350,42 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navUl = document.querySelector('nav ul');
+    const navItems = document.querySelectorAll('nav ul li');
+  
+    function closeMenu() {
+      menuToggle.classList.remove('active');
+      navUl.classList.remove('show');
+      navItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(-20px)';
+      });
+    }
   
     menuToggle.addEventListener('click', function() {
+      this.classList.toggle('active');
       navUl.classList.toggle('show');
+  
+      if (navUl.classList.contains('show')) {
+        navItems.forEach((item, index) => {
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          }, index * 100);
+        });
+      } else {
+        closeMenu();
+      }
+    });
+  
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('nav')) {
+        closeMenu();
+      }
+    });
+  
+    // Close menu when clicking a menu item
+    navItems.forEach(item => {
+      item.addEventListener('click', closeMenu);
     });
   });

@@ -27,20 +27,19 @@ body {
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
   background-color: var(--primary-color);
+  padding: 10px 20px;
   position: fixed;
   width: 100%;
   z-index: 1000;
+  display: flex;
   flex-wrap: wrap;
-  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: var(--secondary-color);
   flex: 1;
@@ -1228,6 +1227,25 @@ footer {
   cursor: pointer;
 }
 
+.hero-button .button-text-short {
+  display: none;
+}
+
+
+@media screen and (max-width: 767px) {
+  .hero-button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .hero-button .button-text {
+    display: none;
+  }
+
+  .hero-button .button-text-short {
+    display: inline;
+  }
+}
 .linkedin-button {
   background-color: #0077B5;
   color: white;
@@ -1294,6 +1312,12 @@ footer {
 /* mobile friendlier */
 /* Add these media queries at the end of your CSS file */
 @media screen and (min-width: 768px) {
+
+  nav {
+    padding: 20px 40px; /* Increased padding */
+    height: 80px; /* Set a fixed height for desktop */
+  }
+
   nav ul {
     display: flex;
     width: auto;
@@ -1303,12 +1327,18 @@ footer {
   }
 
   nav ul li a {
+    padding: 10px 0; /* Add vertical padding to increase clickable area */
     padding: 0;
   }
 
   nav ul li {
+    margin: 0 0 0 30px; /* Increased spacing between menu items */
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .logo {
+    font-size: 1.5rem; /* Slightly larger logo text for desktop */
   }
 
   .menu-toggle {
