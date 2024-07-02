@@ -916,6 +916,7 @@ footer {
 .education-section h2,
 .certifications-section h2,
 .technical-background-section h2 {
+    font-size: 2rem;
     text-align: center;
     margin-bottom: 40px;
     color: var(--text-color);
