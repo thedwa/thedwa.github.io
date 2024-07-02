@@ -43,7 +43,6 @@ nav {
   font-weight: bold;
   color: var(--secondary-color);
   flex: 1;
-
 }
 
 nav ul.show {
@@ -1329,6 +1328,7 @@ footer {
   nav ul li a {
     padding: 10px 0; /* Add vertical padding to increase clickable area */
     padding: 0;
+    font-size: 1rem; /* Adjust font size if needed */
   }
 
   nav ul li {
@@ -1351,6 +1351,7 @@ footer {
     padding: 100px 50px;
     min-height: 90vh; /* Increased height for desktop */
     align-items: center;
+    padding-top: 120px; /* Increased top padding to account for taller nav */
   }
 
   .hero-content {
