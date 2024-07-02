@@ -289,7 +289,8 @@ document.addEventListener('DOMContentLoaded', function() {
         await new Promise(resolve => setTimeout(resolve, 1500));
         
         const response = await fetch(
-            "http://localhost:3000/api/v1/prediction/74e19091-5c72-4230-b521-d8965f5d5e3e",
+            //"http://localhost:3000/api/v1/prediction/74e19091-5c72-4230-b521-d8965f5d5e3e",
+            "https://thewa-thewanner-com.hf.space/api/v1/prediction/ef7151d7-4c9c-4c13-87a4-94df81111abc",
             {
                 method: "POST",
                 headers: {
