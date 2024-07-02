@@ -1071,6 +1071,7 @@ footer {
 
 /* expertise tags */
 
+
 .expertise-section {
   padding: 50px 0;
   background-color: #ffffff;
@@ -1083,8 +1084,8 @@ footer {
 
 .expertise-tags {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 15px;
 }
 
@@ -1095,7 +1096,11 @@ footer {
   cursor: pointer;
   transition: all 0.3s ease;
   overflow: hidden;
-  width: auto;
+  max-width: 200px;
+}
+
+.expertise-tag.active {
+  max-width: 400px;
 }
 
 .tag-header {
@@ -1105,14 +1110,18 @@ footer {
 }
 
 .tag-content {
-  display: none;
-  padding: 15px 20px;
+  max-height: 0;
+  opacity: 0;
+  padding: 0 20px;
   background-color: #000;
   color: white;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
 }
 
 .expertise-tag.active .tag-content {
-  display: block;
+  max-height: 500px;
+  opacity: 1;
+  padding: 15px 20px;
 }
 
 .tag-content p {
@@ -1120,4 +1129,10 @@ footer {
   font-weight: normal;
   white-space: normal;
   line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .expertise-tag {
+      max-width: 100%;
+  }
 }
