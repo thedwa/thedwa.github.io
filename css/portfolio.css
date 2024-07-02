@@ -1070,6 +1070,7 @@ footer {
 }
 
 /* expertise tags */
+
 .expertise-section {
   padding: 50px 0;
   background-color: #ffffff;
@@ -1095,7 +1096,6 @@ footer {
   transition: all 0.3s ease;
   overflow: hidden;
   width: auto;
-  max-width: 80%;
 }
 
 .tag-header {
@@ -1105,17 +1105,14 @@ footer {
 }
 
 .tag-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  display: none;
+  padding: 15px 20px;
   background-color: #000;
   color: white;
-  width: 100%;
 }
 
 .expertise-tag.active .tag-content {
-  max-height: 1000px; /* Adjust this value based on your longest content */
-  padding: 15px 20px;
+  display: block;
 }
 
 .tag-content p {
@@ -1123,17 +1120,4 @@ footer {
   font-weight: normal;
   white-space: normal;
   line-height: 1.5;
-}
-
-/* Ensure the tag width fits its content */
-.expertise-tag, .expertise-tag.active {
-  width: fit-content;
-  max-width: 80%;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  .expertise-tag, .expertise-tag.active {
-      max-width: 90%;
-  }
 }
