@@ -308,3 +308,29 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("Chat functionality initialized");
 });
 
+// expertise tags opening and closing
+
+document.addEventListener('DOMContentLoaded', function() {
+    const expertiseTags = document.querySelectorAll('.expertise-tag');
+
+    expertiseTags.forEach(tag => {
+        tag.addEventListener('click', function() {
+            // Close all other open tags
+            expertiseTags.forEach(otherTag => {
+                if (otherTag !== tag) {
+                    otherTag.classList.remove('active');
+                }
+            });
+
+            // Toggle the clicked tag
+            this.classList.toggle('active');
+        });
+    });
+
+    // Close tag content when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.expertise-tag')) {
+            expertiseTags.forEach(tag => tag.classList.remove('active'));
+        }
+    });
+});
