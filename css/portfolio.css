@@ -1190,9 +1190,8 @@ footer {
   height: 200%;
   background: linear-gradient(
       to bottom right,
-      rgba(255, 81, 81, 0) 0%,
-      rgba(255, 255, 255, 0.8) 50%,
-      rgba(255, 255, 255, 0) 100%
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.8) 50%
   );
   transform: rotate(45deg);
   animation: shine 10s infinite;
