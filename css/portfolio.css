@@ -1218,7 +1218,7 @@ footer {
 /* section end line */
 .line {
   width: 100%;
-  height: 1px;
+  height: 3px;
   background-color: black;
   margin-top: 20px; /* Adjust as needed */
 }
