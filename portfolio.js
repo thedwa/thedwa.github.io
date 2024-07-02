@@ -184,9 +184,6 @@ document.querySelectorAll('.accordion-header').forEach(header => {
     });
 });
 
-
-// CHAT FEATURE AND FUNCTIONS START
-
 // CHAT FEATURE AND FUNCTIONS START
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM fully loaded and parsed");
