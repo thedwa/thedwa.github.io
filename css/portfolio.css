@@ -17,6 +17,7 @@ body {
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--background-color);
+  overflow-x: hidden;
 }
 
 .container {
@@ -34,21 +35,39 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 1000;
+  flex-wrap: wrap;
+  padding: 10px 20px;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--secondary-color);
+  flex: 1;
+
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
+nav ul.show {
+  display: block;
 }
 
 nav ul li {
-  margin-left: 20px;
+  margin: 10px 0;
+}
+
+nav ul {
+  display: none;
+  width: 100%;
+  padding: 0;
+  margin-top: 10px;
+  list-style: none;
+}
+
+/* For the menu toggle */
+.menu-toggle {
+  display: block;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 nav ul li a {
@@ -62,22 +81,26 @@ nav ul li a:hover {
 }
 
 .hero {
-  height: 75vh;
+  height: auto;
   display: flex;
   align-items: center;
+  text-align: center;
   justify-content: space-between;
   padding: 0 50px;
   background-color: var(--primary-color);
   color: var(--secondary-color);
+  flex-direction: column;
+  padding: 100px 20px 50px;
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 100%;
 }
 
 .hero h1 {
   font-size: 4rem;
   margin-bottom: 20px;
+  font-size: 2.5rem;
 }
 
 .hero h2 {
@@ -91,8 +114,9 @@ nav ul li a:hover {
 }
 
 .hero-image {
-  width: 450px;
-  height: 450px;
+  width: 250px;
+  height: 250px;
+  margin-top: 30px;
   border-radius: 50%;
   overflow: hidden;
   border: 5px solid var(--secondary-color);
@@ -140,6 +164,7 @@ nav ul li a:hover {
 
 .education-grid {
   display: grid;
+  grid-template-columns: 1fr;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   max-width: 1200px;
@@ -422,6 +447,7 @@ footer {
 }
 
 .experience-item {
+  flex-direction: column;
   display: flex;
   background-color: #fff;
   border-radius: 8px;
@@ -731,7 +757,7 @@ footer {
 }
 
 .skill-category {
-  width: 45%;
+  width: 100%;
   margin-bottom: 40px;
 }
 
@@ -953,10 +979,10 @@ footer {
 
 .chat-window {
   position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 450px;
-  height: 600px;
+  width: 90%;
+  height: 80vh;
+  bottom: 70px;
+  right: 5%;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -1220,3 +1246,89 @@ footer {
   height: 2px;
   background-color: black;
 }
+
+
+/* mobile friendlier */
+/* Add these media queries at the end of your CSS file */
+@media screen and (min-width: 768px) {
+  nav ul {
+    display: flex;
+    width: auto;
+    margin-top: 0;
+  }
+
+  nav ul li {
+    margin: 0 0 0 20px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: row;
+    text-align: left;
+    padding: 100px 50px;
+  }
+
+  .hero-content {
+    max-width: 50%;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .hero-image {
+    width: 300px;
+    height: 300px;
+    margin-top: 0;
+  }
+
+  .experience-item {
+    flex-direction: row;
+  }
+
+  .education-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .certifications-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .skill-category {
+    width: 45%;
+  }
+
+  .chat-window {
+    width: 400px;
+    height: 600px;
+    right: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero h1 {
+    font-size: 4rem;
+  }
+
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero-image {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+

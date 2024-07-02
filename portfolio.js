@@ -344,3 +344,14 @@ document.addEventListener('DOMContentLoaded', function() {
         chatToggle.click();
     });
 });
+
+
+// toggle menu for mobile view
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('nav ul');
+  
+    menuToggle.addEventListener('click', function() {
+      navUl.classList.toggle('show');
+    });
+  });
