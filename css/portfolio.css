@@ -1205,7 +1205,7 @@ footer {
 }
 
 @keyframes shine {
-  0%, 85% {
+  0%, 60% {
       transform: translate(-100%, 100%) rotate(45deg);
   }
   100% {
