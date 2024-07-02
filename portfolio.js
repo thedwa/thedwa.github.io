@@ -214,6 +214,23 @@ document.addEventListener('DOMContentLoaded', function() {
     typingIndicator.innerHTML = '<span></span><span></span><span></span>';
     chatMessages.appendChild(typingIndicator);
 
+    // Disclaimer message
+    const disclaimer = `
+        <div class="chat-disclaimer">
+            <p><strong>Disclaimer:</strong> This AI assistant provides information based on my background but may occasionally make mistakes or deviate from my actual thoughts or intentions. Please use this chat for general inquiries and refer to official sources for critical information.</p>
+        </div>
+    `;
+
+    if (chatToggle && chatWindow) {
+        chatToggle.addEventListener('click', () => {
+            chatWindow.classList.toggle('hidden');
+            if (!chatWindow.classList.contains('hidden') && chatMessages.children.length === 1) {
+                // Add disclaimer when opening chat for the first time
+                chatMessages.insertAdjacentHTML('afterbegin', disclaimer);
+            }
+        });
+    }
+
     if (chatToggle && chatWindow) {
         chatToggle.addEventListener('click', () => {
             chatWindow.classList.toggle('hidden');

@@ -1442,4 +1442,22 @@ footer {
   }
 }
 
+/* chat window disclaimer etc */
 
+.chat-disclaimer {
+  background-color: #f8f8f8;
+  border-left: 3px solid #35007a;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: #333;
+}
+
+.chat-disclaimer p {
+  margin: 0;
+}
+
+.chat-disclaimer strong {
+  color: #35007a;
+}
