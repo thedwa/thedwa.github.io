@@ -1096,6 +1096,7 @@ footer {
     cursor: pointer;
     transition: all 0.3s ease;
     overflow: hidden;
+    max-height: 45.594px;
 }
 
 .tag-header {
