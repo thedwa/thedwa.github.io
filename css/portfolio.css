@@ -1072,6 +1072,11 @@ footer {
 /* expertise tags */
 
 
+
+
+
+
+
 .expertise-section {
   padding: 50px 0;
   background-color: #ffffff;
@@ -1096,6 +1101,7 @@ footer {
   cursor: pointer;
   transition: all 0.3s ease;
   overflow: hidden;
+  flex: 0 1 auto;
 }
 
 .tag-header {
@@ -1105,23 +1111,24 @@ footer {
 }
 
 .tag-content {
-  display: none;
+  max-height: 0;
+  opacity: 0;
   padding: 0 20px;
   background-color: #000;
   color: white;
   transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+  overflow: hidden;
 }
 
 .expertise-tag.active {
-  width: 100%;
+  flex: 0 1 100%;
   max-width: 400px;
 }
 
 .expertise-tag.active .tag-content {
-  display: block;
-  padding: 15px 20px;
   max-height: 300px;
   opacity: 1;
+  padding: 15px 20px;
 }
 
 .tag-content p {
