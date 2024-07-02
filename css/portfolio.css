@@ -1070,10 +1070,9 @@ footer {
 }
 
 /* expertise tags */
-
 .expertise-section {
   padding: 50px 0;
-  background-color: #f8f9fa;
+  background-color: #ffffff;
 }
 
 .expertise-title {
@@ -1083,8 +1082,8 @@ footer {
 
 .expertise-tags {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 15px;
 }
 
@@ -1095,6 +1094,8 @@ footer {
   cursor: pointer;
   transition: all 0.3s ease;
   overflow: hidden;
+  width: auto;
+  max-width: 80%;
 }
 
 .tag-header {
@@ -1109,25 +1110,30 @@ footer {
   transition: max-height 0.3s ease, padding 0.3s ease;
   background-color: #000;
   color: white;
+  width: 100%;
 }
 
 .expertise-tag.active .tag-content {
-  max-height: 200px; /* Adjust this value based on your content */
-  padding: 15px;
+  max-height: 1000px; /* Adjust this value based on your longest content */
+  padding: 15px 20px;
 }
 
 .tag-content p {
   margin: 0;
   font-weight: normal;
+  white-space: normal;
+  line-height: 1.5;
 }
 
-.expertise-tag.active {
-  width: 300px; /* This sets a maximum width for expanded tags */
+/* Ensure the tag width fits its content */
+.expertise-tag, .expertise-tag.active {
+  width: fit-content;
+  max-width: 80%;
 }
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
-  .expertise-tag.active {
-      width: 90%; /* On smaller screens, expanded tags take up most of the width */
+  .expertise-tag, .expertise-tag.active {
+      max-width: 90%;
   }
 }
