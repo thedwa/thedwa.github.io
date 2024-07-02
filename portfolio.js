@@ -284,9 +284,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const messageElement = document.createElement('div');
         messageElement.classList.add('chat-message', `${sender}-message`);
-        messageElement.textContent = text;
+        
+        // Parse markdown for bot messages
+        if (sender === 'bot') {
+            messageElement.innerHTML = parseMarkdown(text);
+        } else {
+            messageElement.textContent = text;
+        }
+        
         chatMessages.insertBefore(messageElement, typingIndicator);
         scrollToBottom();
+    }
+
+    function parseMarkdown(text) {
+        // Basic Markdown parsing
+        return text
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold
+            .replace(/\*(.*?)\*/g, '<em>$1</em>')              // Italic
+            .replace(/\n/g, '<br>')                            // Line breaks
+            .replace(/- (.*)/g, '• $1')                        // Bullet points
+            .replace(/^#\s+(.*$)/gm, '<h3>$1</h3>')            // H3 headers
+            .replace(/^##\s+(.*$)/gm, '<h4>$1</h4>')           // H4 headers
+            .replace(/^###\s+(.*$)/gm, '<h5>$1</h5>');         // H5 headers
     }
 
     function scrollToBottom() {
