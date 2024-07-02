@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Disclaimer message
     const disclaimer = `
         <div class="chat-disclaimer">
-            <p><strong>Disclaimer:</strong> This AI assistant provides information based on my background but may occasionally make mistakes or deviate from my actual thoughts or intentions. Please use this chat for general inquiries and refer to official sources for critical information.</p>
+            <p><strong>Disclaimer:</strong> This AI assistant provides information based on my background but may occasionally make mistakes or deviate from my actual thoughts or intentions. Please use it for general inquiries and a general look and feel, but don't take it for granted.</p>
         </div>
     `;
 

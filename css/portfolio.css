@@ -1449,7 +1449,8 @@ footer {
   border-left: 3px solid #35007a;
   padding: 10px;
   margin-bottom: 15px;
-  font-size: 0.9em;
+  font-size: 0.8em;
+  font-style: italic;
   line-height: 1.4;
   color: #333;
 }
