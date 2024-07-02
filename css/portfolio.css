@@ -1104,6 +1104,36 @@ footer {
   align-self: flex-start;
 }
 
+.bot-message strong {
+  font-weight: bold;
+}
+
+.bot-message em {
+  font-style: italic;
+}
+
+.bot-message h3, .bot-message h4, .bot-message h5 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+
+.bot-message h3 {
+  font-size: 1.2em;
+}
+
+.bot-message h4 {
+  font-size: 1.1em;
+}
+
+.bot-message h5 {
+  font-size: 1em;
+}
+
+.bot-message ul {
+  padding-left: 20px;
+}
+
 .chat-input {
   display: flex;
   padding: 10px;
