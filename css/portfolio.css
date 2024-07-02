@@ -1098,6 +1098,8 @@ footer {
   margin-left: auto;
 }
 
+/* bot messages formatting */
+
 .bot-message {
   background-color: #f1f1f1;
   color: black;
@@ -1113,26 +1115,62 @@ footer {
 }
 
 .bot-message h3, .bot-message h4, .bot-message h5 {
-  margin-top: 10px;
-  margin-bottom: 5px;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
-
 .bot-message h3 {
-  font-size: 1.2em;
+  font-size: 1.3em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
 }
 
 .bot-message h4 {
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 .bot-message h5 {
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
-.bot-message ul {
+.bot-message ul, .bot-message ol {
   padding-left: 20px;
+  margin-bottom: 10px;
 }
+
+.bot-message li {
+  margin-bottom: 5px;
+}
+
+.bot-message a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.bot-message a:hover {
+  text-decoration: underline;
+}
+
+.bot-message code {
+  background-color: #f0f0f0;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.bot-message pre {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.bot-message pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* end bot messages */
 
 .chat-input {
   display: flex;

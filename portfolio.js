@@ -297,15 +297,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function parseMarkdown(text) {
-        // Basic Markdown parsing
+        // Enhanced Markdown parsing
         return text
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold
-            .replace(/\*(.*?)\*/g, '<em>$1</em>')              // Italic
-            .replace(/\n/g, '<br>')                            // Line breaks
-            .replace(/- (.*)/g, '• $1')                        // Bullet points
-            .replace(/^#\s+(.*$)/gm, '<h3>$1</h3>')            // H3 headers
-            .replace(/^##\s+(.*$)/gm, '<h4>$1</h4>')           // H4 headers
-            .replace(/^###\s+(.*$)/gm, '<h5>$1</h5>');         // H5 headers
+            // Headers
+            .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+            .replace(/^## (.*$)/gm, '<h4>$1</h4>')
+            .replace(/^# (.*$)/gm, '<h5>$1</h5>')
+            // Bold
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            // Italic
+            .replace(/\*(.*?)\*/g, '<em>$1</em>')
+            // Line breaks
+            .replace(/\n/g, '<br>')
+            // Unordered list
+            .replace(/^\s*[-*+] (.+)/gm, '<li>$1</li>')
+            .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
+            // Ordered list
+            .replace(/^\s*\d+\. (.+)/gm, '<li>$1</li>')
+            .replace(/(<li>.*<\/li>)/s, '<ol>$1</ol>')
+            // Links
+            .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
+            // Code blocks
+            .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
+            // Inline code
+            .replace(/`([^`]+)`/g, '<code>$1</code>');
     }
 
     function scrollToBottom() {
