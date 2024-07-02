@@ -410,4 +410,56 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
     });
+
+
+  // Smooth scroll function
+  function smoothScroll(target, duration) {
+    var targetElement = document.querySelector(target);
+    var targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+    var startPosition = window.pageYOffset;
+    var distance = targetPosition - startPosition;
+    var startTime = null;
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      var timeElapsed = currentTime - startTime;
+      var run = ease(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function ease(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+  }
+
+  // Apply smooth scroll to all internal links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      // Close mobile menu if open
+      if (isMobile()) {
+        closeMenu();
+      }
+
+      // Get the target element's top position, accounting for the fixed header
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      const headerOffset = document.querySelector('nav').offsetHeight;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      // Smooth scroll to the target
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    });
   });
+});
