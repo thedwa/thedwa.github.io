@@ -1096,7 +1096,6 @@ footer {
   cursor: pointer;
   transition: all 0.3s ease;
   overflow: hidden;
-  width: auto;
 }
 
 .tag-header {
@@ -1106,15 +1105,11 @@ footer {
 }
 
 .tag-content {
-  max-height: 0;
-  opacity: 0;
+  display: none;
   padding: 0 20px;
   background-color: #000;
   color: white;
-  transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out;
-  overflow: hidden;
-  /*width: 100%;
-  max-width: 400px;*/
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
 }
 
 .expertise-tag.active {
@@ -1123,9 +1118,10 @@ footer {
 }
 
 .expertise-tag.active .tag-content {
-  /*max-height: 300px;*/
-  opacity: 1;
+  display: block;
   padding: 15px 20px;
+  max-height: 300px;
+  opacity: 1;
 }
 
 .tag-content p {

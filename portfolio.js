@@ -310,17 +310,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // expertise tags opening and closing
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const expertiseTags = document.querySelectorAll('.expertise-tag');
 
     expertiseTags.forEach(tag => {
         tag.addEventListener('click', function(event) {
+            // Prevent the click from bubbling up to parent elements
             event.stopPropagation();
 
             // Close all other open tags
             expertiseTags.forEach(otherTag => {
-                if (otherTag !== tag) {
+                if (otherTag !== this) {
                     otherTag.classList.remove('active');
                 }
             });
