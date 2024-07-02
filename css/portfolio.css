@@ -1113,8 +1113,8 @@ footer {
   color: white;
   transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out;
   overflow: hidden;
-  width: 100%;
-  max-width: 400px;
+  /*width: 100%;
+  max-width: 400px;*/
 }
 
 .expertise-tag.active {
@@ -1123,7 +1123,7 @@ footer {
 }
 
 .expertise-tag.active .tag-content {
-  max-height: 300px;
+  /*max-height: 300px;*/
   opacity: 1;
   padding: 15px 20px;
 }
