@@ -314,7 +314,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const expertiseTags = document.querySelectorAll('.expertise-tag');
 
     expertiseTags.forEach(tag => {
-        tag.addEventListener('click', function() {
+        tag.addEventListener('click', function(event) {
+            // Prevent the click from propagating to the document
+            event.stopPropagation();
+
             // Close all other open tags
             expertiseTags.forEach(otherTag => {
                 if (otherTag !== tag) {
@@ -328,9 +331,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Close tag content when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!event.target.closest('.expertise-tag')) {
-            expertiseTags.forEach(tag => tag.classList.remove('active'));
-        }
+    document.addEventListener('click', function() {
+        expertiseTags.forEach(tag => tag.classList.remove('active'));
     });
 });
