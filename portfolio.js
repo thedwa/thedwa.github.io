@@ -231,12 +231,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (chatToggle && chatWindow) {
-        chatToggle.addEventListener('click', () => {
-            chatWindow.classList.toggle('hidden');
-        });
-    }
-
     if (chatClose && chatWindow) {
         chatClose.addEventListener('click', () => {
             chatWindow.classList.add('hidden');
