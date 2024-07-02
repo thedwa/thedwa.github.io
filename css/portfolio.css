@@ -1138,3 +1138,50 @@ footer {
         max-width: 100%;
     }
 }
+
+
+/* Hero buttons */
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.hero-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.linkedin-button {
+    background-color: #0077B5;
+    color: white;
+    border: none;
+}
+
+.linkedin-button:hover {
+    background-color: #006097;
+}
+
+.chat-button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.chat-button:hover {
+    background-color: #e0e0e0;
+}
+
+.button-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}

@@ -335,3 +335,14 @@ document.addEventListener('DOMContentLoaded', function() {
         expertiseTags.forEach(tag => tag.classList.remove('active'));
     });
 });
+
+// hero buttons functions:
+
+document.addEventListener('DOMContentLoaded', function() {
+    const openChatButton = document.getElementById('open-chat');
+    const chatToggle = document.getElementById('chat-toggle');
+    
+    openChatButton.addEventListener('click', function() {
+        chatToggle.click();
+    });
+});
