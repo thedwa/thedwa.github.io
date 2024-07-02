@@ -1070,11 +1070,12 @@ footer {
 }
 
 /* expertise tags */
+/*
 .expertise-section {
   padding: 50px 0;
   background-color: #f8f9fa;
 }
-
+*/
 .expertise-tags {
   display: flex;
   flex-wrap: wrap;
