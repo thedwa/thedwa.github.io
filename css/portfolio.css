@@ -476,18 +476,18 @@ footer {
 }
 
 .experience-item {
-  flex-direction: column;
   display: flex;
   background-color: #fff;
   border-radius: 8px;
   margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .experience-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .experience-logo {
@@ -497,26 +497,46 @@ footer {
   align-items: center;
   background-color: var(--accent-color);
   padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover .experience-logo {
+  background-color: var(--primary-color);
 }
 
 .experience-logo img {
   width: 60px;
   height: 60px;
-  object-fit: contain; /* Changed from cover to contain */
+  object-fit: contain;
   border-radius: 50%;
   border: 2px solid #e0e0e0;
-  background-color: #fff; /* Added white background */
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover .experience-logo img {
+  transform: scale(1.1);
 }
 
 .experience-content {
   flex: 1;
   padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover .experience-content {
+  background-color: #f9f9f9;
 }
 
 .experience-header h3 {
   color: var(--secondary-color);
   font-size: 1.2rem;
   margin: 0 0 5px 0;
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover .experience-header h3 {
+  color: var(--secondary-color);
 }
 
 .experience-header .company {
@@ -589,6 +609,10 @@ footer {
 @media (max-width: 768px) {
   .experience-item {
     flex-direction: column;
+  }
+  
+  .experience-item:hover {
+    transform: translateY(-3px) scale(1.01);
   }
 
   .experience-logo {
