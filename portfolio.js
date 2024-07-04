@@ -3,10 +3,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     const tags = [
       "FOUNDER FOODWISE",
-      "BUSINESS & TECHNOLOGY PRODUCT MANAGER",
-      "EX-GOOGLE",
-      "SELF-TAUGHT SOFTWARE ENGINEER",
-      "CREDIT RISK"
+      "PRODUCT MANAGER",
+      "BUSINESS & TECHNOLOGY",
+      "SOFTWARE ENGINEERING",
+      "CREDIT RISK",
+      "ACCOUNT MANAGEMENT"
     ];
     const typedTags = document.getElementById('typed-tags');
     let currentTagIndex = 0;
