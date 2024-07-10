@@ -39,27 +39,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const experienceItems = document.querySelectorAll('.experience-item');
-
+  
     experienceItems.forEach(item => {
-        const tabButtons = item.querySelectorAll('.tab-button');
-        const tabContents = item.querySelectorAll('.tab-content');
-
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const tabId = button.getAttribute('data-tab');
-                const tabContent = item.querySelector(`#${tabId}`);
-
-                // Remove active class from all buttons and contents within this experience item
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                tabContents.forEach(content => content.classList.remove('active'));
-
-                // Add active class to clicked button and corresponding content
-                button.classList.add('active');
-                tabContent.classList.add('active');
-            });
+      const tabs = item.querySelectorAll('.tab-button');
+      const contents = item.querySelectorAll('.tab-content');
+  
+      // Show the first tab content by default
+      contents[0].style.display = 'block';
+  
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const tabId = tab.getAttribute('data-tab');
+          
+          tabs.forEach(t => t.classList.remove('active'));
+          contents.forEach(c => c.style.display = 'none');
+  
+          tab.classList.add('active');
+          item.querySelector(`#${tabId}`).style.display = 'block';
         });
+      });
     });
-});
+  });
 
 document.addEventListener('DOMContentLoaded', function() {
     // Animate skill bars
