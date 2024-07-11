@@ -509,3 +509,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
+
+// projects section
+
+document.addEventListener('DOMContentLoaded', function() {
+    const projectCards = document.querySelectorAll('.project-card');
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Close all other expanded cards
+            projectCards.forEach(otherCard => {
+                if (otherCard !== this && otherCard.classList.contains('expanded')) {
+                    otherCard.classList.remove('expanded');
+                }
+            });
+
+            // Toggle the clicked card
+            this.classList.toggle('expanded');
+
+            // Smooth scroll to the expanded card
+            if (this.classList.contains('expanded')) {
+                setTimeout(() => {
+                    this.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 300); // Wait for the expansion animation to complete
+            }
+        });
+    });
+
+    // Close expanded card when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.project-card')) {
+            projectCards.forEach(card => {
+                card.classList.remove('expanded');
+            });
+        }
+    });
+});
