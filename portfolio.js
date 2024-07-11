@@ -511,7 +511,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // projects section
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -1009,6 +1009,7 @@ footer {
 .experience-section h2,
 .education-section h2,
 .certifications-section h2,
+.projects-section h2,
 .technical-background-section h2 {
     font-size: 2rem;
     text-align: center;
@@ -1560,6 +1561,8 @@ footer {
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .project-card {
