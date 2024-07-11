@@ -514,38 +514,55 @@ document.addEventListener('DOMContentLoaded', function() {
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // projects section
 
+
 document.addEventListener('DOMContentLoaded', function() {
     const projectCards = document.querySelectorAll('.project-card');
+    const imagePopup = document.getElementById('imagePopup');
+    const popupImage = document.getElementById('popupImage');
+    const popupCaption = document.getElementById('popupCaption');
+    const closePopup = document.querySelector('.close-popup');
 
     projectCards.forEach(card => {
         card.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default click behavior
+            if (!event.target.classList.contains('clickable-image')) {
+                event.preventDefault();
 
-            // Close all other expanded cards
-            projectCards.forEach(otherCard => {
-                if (otherCard !== this && otherCard.classList.contains('expanded')) {
-                    otherCard.classList.remove('expanded');
-                }
-            });
+                // Close all other expanded cards
+                projectCards.forEach(otherCard => {
+                    if (otherCard !== this && otherCard.classList.contains('expanded')) {
+                        otherCard.classList.remove('expanded');
+                    }
+                });
 
-            // Toggle the clicked card
-            this.classList.toggle('expanded');
+                // Toggle the clicked card
+                this.classList.toggle('expanded');
 
-            // Ensure the expanded card is fully visible
-            if (this.classList.contains('expanded')) {
-                const rect = this.getBoundingClientRect();
-                const isFullyVisible = (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
+                // Ensure the expanded card is fully visible
+                if (this.classList.contains('expanded')) {
+                    const rect = this.getBoundingClientRect();
+                    const isFullyVisible = (
+                        rect.top >= 0 &&
+                        rect.left >= 0 &&
+                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                    );
 
-                if (!isFullyVisible) {
-                    this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    if (!isFullyVisible) {
+                        this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
                 }
             }
         });
+
+        const clickableImage = card.querySelector('.clickable-image');
+        if (clickableImage) {
+            clickableImage.addEventListener('click', function(event) {
+                event.stopPropagation();
+                popupImage.src = this.src;
+                popupCaption.textContent = this.nextElementSibling.textContent;
+                imagePopup.style.display = 'block';
+            });
+        }
     });
 
     // Close expanded card when clicking outside
@@ -556,4 +573,15 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+
+    // Close popup when clicking on close button or outside the image
+    closePopup.onclick = function() {
+        imagePopup.style.display = 'none';
+    }
+
+    imagePopup.onclick = function(event) {
+        if (event.target === imagePopup) {
+            imagePopup.style.display = 'none';
+        }
+    }
 });

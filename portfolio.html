@@ -518,7 +518,8 @@
               <div class="project-details">
                   <p class="project-description">Developed a Python-based trading algorithm using advanced analytics such as Monte-Carlo simulations for potential equity curves.</p>
                   <div class="project-image">
-                      <img src="img/trading-view.png" alt="Trading Algorithm Signals">
+                      <img src="img/trading-view.png" alt="Trading Algorithm Signals" class="clickable-image">
+                      <p class="image-caption">Screenshot of a custom indicator with buying and selling signals.</p>
                   </div>
                   <p class="project-image-description">In the image, we see a custom indicator trying to find buying and selling signals from the chart. As an anycyclic momentum trading algorithm, it tries to find highs and lows. The blue marked area shows successful attempts, while the red section shows unsuccessful attempts (wrong signals).</p>
                   <p class="project-outcome">The project is still active on tradingview.com, consistently outperforming market benchmarks.</p>
@@ -537,6 +538,13 @@
           </div>
       </div>
   </section>
+  
+  <!-- Image Popup -->
+  <div id="imagePopup" class="image-popup">
+      <span class="close-popup">&times;</span>
+      <img class="popup-content" id="popupImage">
+      <p id="popupCaption" class="popup-caption"></p>
+  </div>
 
 
 
