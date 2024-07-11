@@ -1676,6 +1676,7 @@ footer {
   max-width: 90%;
   max-height: 90%;
   object-fit: contain;
+  margin-top: 5%;
 }
 
 .close-popup {
