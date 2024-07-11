@@ -1549,7 +1549,6 @@ footer {
 
 
 /* PROJECTS CSS */
-
 .projects-section {
   padding: 100px 0;
   background-color: var(--background-color);
@@ -1561,8 +1560,7 @@ footer {
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  margin-left: 10px;
-  margin-right: 10px;
+  justify-content: center;
 }
 
 .project-card {
@@ -1573,6 +1571,10 @@ footer {
   transition: all 0.3s ease;
   cursor: pointer;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .project-card:hover {
@@ -1611,21 +1613,37 @@ footer {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  width: 100%;
 }
 
 .project-card.expanded {
   grid-column: 1 / -1;
+  text-align: left;
 }
 
 .project-card.expanded .project-details {
-  max-height: 1000px;
+  max-height: 2000px;
   opacity: 1;
   margin-top: 20px;
 }
 
 .project-description, .project-outcome {
   margin-bottom: 15px;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  display: block;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 @media (max-width: 768px) {

@@ -518,7 +518,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectCards = document.querySelectorAll('.project-card');
 
     projectCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default click behavior
+
             // Close all other expanded cards
             projectCards.forEach(otherCard => {
                 if (otherCard !== this && otherCard.classList.contains('expanded')) {
@@ -529,11 +531,19 @@ document.addEventListener('DOMContentLoaded', function() {
             // Toggle the clicked card
             this.classList.toggle('expanded');
 
-            // Smooth scroll to the expanded card
+            // Ensure the expanded card is fully visible
             if (this.classList.contains('expanded')) {
-                setTimeout(() => {
-                    this.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 300); // Wait for the expansion animation to complete
+                const rect = this.getBoundingClientRect();
+                const isFullyVisible = (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+
+                if (!isFullyVisible) {
+                    this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
             }
         });
     });
