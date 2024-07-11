@@ -1697,6 +1697,7 @@ footer {
 
 .popup-content {
   margin: auto;
+  margin-top: 5%;
   display: block;
   max-width: 90%;
   max-height: 90%;
