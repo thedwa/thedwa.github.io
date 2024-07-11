@@ -514,7 +514,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // projects section
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const projectCards = document.querySelectorAll('.project-card');
     const imagePopup = document.getElementById('imagePopup');
@@ -522,9 +521,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const popupCaption = document.getElementById('popupCaption');
     const closePopup = document.querySelector('.close-popup');
 
+    // Lazy loading
+    const lazyImages = document.querySelectorAll('.lazy-image');
+    const lazyLoadOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.add('loaded');
+                observer.unobserve(img);
+            }
+        });
+    }, lazyLoadOptions);
+
+    lazyImages.forEach(img => lazyLoadObserver.observe(img));
+
     projectCards.forEach(card => {
         card.addEventListener('click', function(event) {
-            if (!event.target.classList.contains('clickable-image')) {
+            if (!event.target.classList.contains('clickable-image') && !card.classList.contains('placeholder-card')) {
                 event.preventDefault();
 
                 // Close all other expanded cards
