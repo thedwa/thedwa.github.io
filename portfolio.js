@@ -605,3 +605,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// button tracking GA4
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Chat with TheoGPT button
+    const chatGPTButton = document.getElementById('open-chat');
+    if (chatGPTButton) {
+        chatGPTButton.addEventListener('click', function() {
+            gtag('event', 'chat_with_theogpt_click', {
+                event_category: 'engagement',
+                event_label: 'hero_chat_button'
+            });
+        });
+    }
+
+    // Chat about Théodore button
+    const chatToggle = document.getElementById('chat-toggle');
+    if (chatToggle) {
+        chatToggle.addEventListener('click', function() {
+            gtag('event', 'chat_about_theodore_click', {
+                event_category: 'engagement',
+                event_label: 'hover_chat_button'
+            });
+        });
+    }
+});
