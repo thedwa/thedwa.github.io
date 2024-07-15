@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const response = await fetch(
             //"http://localhost:3000/api/v1/prediction/74e19091-5c72-4230-b521-d8965f5d5e3e",
-            "https://thewa-thewanner-com.hf.space/api/v1/prediction/6d4c227f-19ac-4f5d-a2ca-ef05a1246ad4",
+            "https://thewa-thewanner-com.hf.space/api/v1/prediction/0d9758da-b30e-4460-8908-3c2d1ba1c770",
             {
                 method: "POST",
                 headers: {
